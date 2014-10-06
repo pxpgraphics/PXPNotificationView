@@ -129,14 +129,12 @@ static NSTimeInterval const PXPNotificationViewEndDismissDelay = 0.0;
 	} else {
 		screenSize.height = MAX(screenSize.width, screenSize.height);
 		screenSize.width = MIN(screenSize.height, screenSize.width);
-		CGRect messageLabelRect = [self.messageLabel.text boundingRectWithSize:CGSizeMake(screenSize.width, screenSize.height)
-																	   options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin
-																	attributes:@{ NSFontAttributeName: self.messageLabel.font }
-																	   context:nil];
-		if (messageLabelRect.size.height > messageLabelHeight) {
-			viewHeight += (messageLabelHeight / 2.0f);
-		}
 	}
+
+	viewHeight += ((messageLabelHeight / self.messageLabel.font.pointSize) * (messageLabelHeight / 4.0f));
+
+	self.titleLabel.preferredMaxLayoutWidth = screenSize.width;
+	self.messageLabel.preferredMaxLayoutWidth = screenSize.width;
 
 	NSDictionary *metrics = @{ @"height" : @(viewHeight),
 							   @"width" : @(screenSize.width),

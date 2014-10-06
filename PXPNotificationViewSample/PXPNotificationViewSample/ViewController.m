@@ -27,7 +27,7 @@
 	NSString *message;
 	if (!flag) {
 		flag = YES;
-		message = @"A 2-lined message should describe what has happened to cause the notification to be presented.";
+		message = @"A 2-lined message should describe what has happened to cause the notification to be presented.\nIf the message is too long, the label will truncate the tail by default.";
 	} else {
 		flag = NO;
 		message = @"A 1-lined message should be short.";
