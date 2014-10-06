@@ -107,12 +107,12 @@
  *  @param message		   Message of the notification, limited to 2 lines.
  *  @param backgroundColor Background color of the notification.
  *  @param textColor	   Text color of the notification view's labels.
- *  @param dismissDelay	   Delay interval (in seconds) for when the dismissing animation should begin.
+ *  @param delay	       Delay interval (in seconds) for when the dismissing animation should begin.
  */
 + (void)showWithTitle:(NSString *)title
 			  message:(NSString *)message
 	  backgroundColor:(UIColor *)backgroundColor
 			textColor:(UIColor *)textColor
-		 dismissDelay:(NSTimeInterval)dismissDelay;
+	dismissAfterDelay:(NSTimeInterval)delay;
 
 @end

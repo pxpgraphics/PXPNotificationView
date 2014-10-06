@@ -327,7 +327,7 @@ static NSTimeInterval const PXPNotificationViewEndDismissDelay = 0.0;
 						message:message
 				backgroundColor:nil
 					  textColor:nil
-				   dismissDelay:PXPNotificationViewBeginDismissDelay];
+			  dismissAfterDelay:PXPNotificationViewBeginDismissDelay];
 }
 
 + (void)showWithTitle:(NSString *)title
@@ -339,14 +339,14 @@ static NSTimeInterval const PXPNotificationViewEndDismissDelay = 0.0;
 						message:message
 				backgroundColor:nil
 					  textColor:nil
-				   dismissDelay:PXPNotificationViewBeginDismissDelay];
+			  dismissAfterDelay:PXPNotificationViewBeginDismissDelay];
 }
 
 + (void)showWithTitle:(NSString *)title
 			  message:(NSString *)message
 	  backgroundColor:(UIColor *)backgroundColor
 			textColor:(UIColor *)textColor
-		 dismissDelay:(NSTimeInterval)dismissDelay
+	dismissAfterDelay:(NSTimeInterval)delay
 {
 	[[self class] dismissAllViews];
 	PXPNotificationView *notificationView = [[PXPNotificationView alloc]
@@ -355,7 +355,7 @@ static NSTimeInterval const PXPNotificationViewEndDismissDelay = 0.0;
 											 backgroundColor:backgroundColor
 											 textColor:textColor];
 
-	[NSTimer scheduledTimerWithTimeInterval:dismissDelay
+	[NSTimer scheduledTimerWithTimeInterval:delay
 									 target:notificationView
 								   selector:@selector(dismiss:)
 								   userInfo:nil repeats:NO];

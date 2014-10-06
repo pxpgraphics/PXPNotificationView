@@ -36,7 +36,7 @@
 							   message:message
 					   backgroundColor:[self randomColor]
 							 textColor:[UIColor whiteColor]
-						  dismissDelay:5.0];
+					 dismissAfterDelay:5.0];
 }
 
 - (UIColor *)randomColor
